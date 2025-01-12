@@ -14,14 +14,22 @@ import { sendEmail } from "./utils/sendEmail.js";
 const app = express();
 config({ path: "./config/config.env" });
 
+// app.use(
+//   cors({
+//     origin: [process.env.FRONTEND_URL, 'http://localhost:5173'],  // Add localhost URL
+//     methods: ["GET", "POST", "PUT", "DELETE"],
+//     credentials: true,
+//   })
+// );
+// FRONTEND_URL = http://localhost:5173
+
 app.use(
   cors({
-    origin: [process.env.FRONTEND_URL],
+    origin: '*', 
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
 );
-
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
