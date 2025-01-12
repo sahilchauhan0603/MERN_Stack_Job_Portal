@@ -17,7 +17,7 @@ const Feedback = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:4000/submitFeedback', {
+      const response = await fetch('https://jobquest-backend-v4d2.onrender.com/submitFeedback', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
