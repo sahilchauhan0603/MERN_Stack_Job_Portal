@@ -42,7 +42,7 @@ const TopNiches = () => {
 
   return (
     <section className="services">
-      <h3>Top Niches</h3>
+      <h3>Top Jobs !!</h3>
       <div className="grid">
         {services.map((element) => {
           return (

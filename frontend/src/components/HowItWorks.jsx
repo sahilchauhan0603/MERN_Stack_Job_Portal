@@ -2,12 +2,14 @@ import React from "react";
 import { LuUserPlus } from "react-icons/lu";
 import { VscTasklist } from "react-icons/vsc";
 import { BiSolidLike } from "react-icons/bi";
-
+import { Link } from "react-router-dom";
 const HowItWorks = () => {
   return (
     <section className="howItWorks">
       <h3>How does it work?</h3>
       <div className="container">
+        
+      <Link to="/login" className="card-link">
         <div className="card">
           <div className="icon">
             <LuUserPlus />
@@ -19,6 +21,10 @@ const HowItWorks = () => {
             Customize your profile to highlight your skills or requirements.
           </p>
         </div>
+      </Link>
+
+
+      <Link to="/login" className="card-link">
         <div className="card">
           <div className="icon">
             <VscTasklist />
@@ -30,6 +36,10 @@ const HowItWorks = () => {
             to find jobs that match your skills and preferences.
           </p>
         </div>
+      </Link>
+
+
+      <Link to="/login" className="card-link">
         <div className="card">
           <div className="icon">
             <BiSolidLike />
@@ -41,6 +51,8 @@ const HowItWorks = () => {
             their career goals.
           </p>
         </div>
+      </Link>
+
       </div>
     </section>
   );

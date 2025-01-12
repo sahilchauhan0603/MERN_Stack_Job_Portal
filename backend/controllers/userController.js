@@ -9,7 +9,7 @@ export const register = catchAsyncErrors(async (req, res, next) => {
     const {
       name,
       email,
-      phone,
+      phone,  
       address,
       password,
       role,

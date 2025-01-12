@@ -74,6 +74,7 @@ const Register = () => {
     }
     dispatch(register(formData));
   };
+  
 
   useEffect(() => {
     if (error) {
@@ -263,7 +264,33 @@ const Register = () => {
             <button type="submit" disabled={loading}>
               Register
             </button>
-            <Link to={"/login"}>Login Now</Link>
+            <Link
+              to="/login"
+              style={{
+                display: 'inline-block',
+                width: '100%',
+                padding: '0.8rem',
+                fontSize: '1rem',
+                backgroundColor: '#f7e529',
+                color: '#0e0d0d',
+                border: 'none',
+                borderRadius: '4px',
+                cursor: 'pointer',
+                textAlign: 'center',
+                textDecoration: 'none',
+                fontWeight: 'bolder',
+                transition: 'background-color 0.3s, transform 0.2s',
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.backgroundColor = '#ff5733';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.backgroundColor = '#f7e529';
+              }}
+            >
+              Login Now
+          </Link>
+
           </form>
         </div>
       </section>

@@ -14,14 +14,14 @@ const Footer = () => {
     <>
       <footer>
         <div>
-          <img src="/logo.png" alt="logo" />
+          <img src="/logo1.png" alt="logo" />
         </div>
         <div>
           <h4>Support</h4>
           <ul>
-            <li>Street No.007 Shahrah-e-Faisal Karachi, Pakistan</li>
-            <li>nichenest@gmail.com</li>
-            <li>+92 3106507521</li>
+            <li>Street No.87 Paschim Vihar, Delhi, India</li>
+            <li>jobquest@gmail.com</li>
+            <li>+91 8765245311</li>
           </ul>
         </div>
 
@@ -29,10 +29,10 @@ const Footer = () => {
           <h4>Quick Links</h4>
           <ul>
             <li to={"/"}>
-              <Link>Home</Link>
+              <Link to={"/"}>Home</Link>
             </li>
             <li to={"/jobs"}>
-              <Link>Jobs</Link>
+              <Link to={"/jobs"}>Jobs</Link>
             </li>
             {isAuthenticated && (
               <li>
@@ -45,7 +45,7 @@ const Footer = () => {
           <h4>Follow Us</h4>
           <ul>
             <li>
-              <Link to={"/"}>
+              <Link to={"https://twitter.com/TheSahil061003"}>
                 <span>
                   <FaSquareXTwitter />
                 </span>
@@ -53,7 +53,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link to={"/"}>
+              <Link to={"https://www.instagram.com/sahilchauhan0603/"}>
                 <span>
                   <FaSquareInstagram />
                 </span>
@@ -61,15 +61,15 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link to={"/"}>
+              <Link to={"mailto:sahilchauhan0603@gmail.com"}>
                 <span>
                   <FaYoutube />
                 </span>
-                <span>Youtube</span>
+                <span>Gmail</span>
               </Link>
             </li>
             <li>
-              <Link to={"/"}>
+              <Link to={"https://linkedin.com/in/sahil-chauhan-a6a626265"}>
                 <span>
                   <FaLinkedin />
                 </span>
@@ -80,7 +80,7 @@ const Footer = () => {
         </div>
       </footer>
       <div className="copyright">
-        &copy; CopyRight 2024. All Rights Reserved By CodeWithZeeshu
+        &copy; CopyRight 2025. All Rights Reserved By JobQuest
       </div>
     </>
   );

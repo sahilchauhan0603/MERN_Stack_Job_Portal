@@ -7,13 +7,70 @@
   overflow-x: hidden;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 18px;
 }
 input::-webkit-inner-spin-button,
 input::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+body {
+  margin-top: 70px; /* Adjust this value to the height of your navbar */
+}
+
+/* Marquee Container */
+.marquee-container {
+  background-color: #f87171; /* bg-red-500 */
+  color: white; /* text-white */
+  padding: 1rem; /* p-4 */
+  overflow: hidden; /* overflow-hidden */
+  margin-top: 4px;
+}
+
+/* Marquee Content Layout */
+.marquee-content {
+  display: flex; /* flex */
+  flex-direction: row; /* flex-row */
+  justify-content: flex-start; /* justify-start */
+  align-items: center; /* items-center */
+  gap: 4rem; /* space-x-16 */
+  white-space: nowrap; /* whitespace-nowrap */
+  animation: marquee 15s linear infinite; /* Animate marquee */
+}
+
+/* Static text on the left */
+.marquee-static-text {
+  margin-right: 2rem; /* Space between static text and animated content */
+  font-size: 1.2rem; /* Customize as needed */
+  font-weight: bolder;
+  padding-left: 450px;
+  color:#ece6e6;
+  font-weight: bold;
+  /* background: #cb1919; */
+  /* margin-top: -4px; */
+  /* padding-bottom: 4px */
+}
+/* Marquee Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Styling for the marquee text */
+.marquee-text {
+  /* text-align: center; center text */
+  font-size: 0.875rem; /* text-sm */
+  font-weight: bold; /* font-bold */
+  margin-bottom: 0.5rem; /* mb-2 */
+  min-width: max-content; 
+  /* background: #000; */
+}
+
+
 .btn,
 .black_btn,
 .outline_btn {
@@ -57,8 +114,8 @@ input::-webkit-outer-spin-button {
 }
 .outline_btn {
   background: transparent;
-  color: #dfdf07;
-  border: 1px solid #dfdf07;
+  color: #df4407;
+  border: 1px solid #df4407;
 }
 .btn:hover {
   background-color: #111;
@@ -73,51 +130,112 @@ input::-webkit-outer-spin-button {
   cursor: pointer;
 }
 
+
+/* Typewriter effect */
+.typewriter {
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  /* border-right: 4px solid rgba(0, 0, 0, 0.75); Cursor effect */
+  width: 0;
+  animation: typing 3s steps(30) 0.5s forwards, blink 0.9s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+
+
+
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(237, 237, 237, 0.9); /* Slight transparency for a modern look */
+  color: #333;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Smooth transitions */
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid rgb(133, 133, 133);
-  padding: 20px 110px;
   align-items: center;
+  padding: 15px 50px; /* Adjusted padding for a sleeker look */
+  border-bottom: 1px solid #858585; /* Subtle border */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a slight shadow for depth */
 }
+.navbar-visible {
+  transform: translateY(0); /* Navbar is visible */
+}
+
+.navbar-hidden {
+  transform: translateY(-100%); /* Navbar is hidden */
+}
+
 .navbar .hamburger {
   display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
 }
+
 .navbar .logo {
-  flex: 1;
   display: flex;
-  align-items: center;
   gap: 30px;
 }
 .navbar .logo h4 {
   font-size: 26px;
   font-weight: 600;
   text-transform: uppercase;
-  color: #dfdf07;
+  color: #d7d70b;
 }
 .navbar .logo img {
   width: 120px;
+  display: inline-block; /* Ensure transform works on inline elements */
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for scale and color */
 }
+/* Hover effect for logo */
+.navbar .logo img:hover {
+  transform: scale(1.1); 
+}
+
 .navbar .links {
+  width: 350px;
   display: flex;
-  justify-content: space-between;
 }
 .navbar .links ul {
   display: flex;
-  align-items: center;
-  gap: 50px;
+  justify-content: space-between;
+  width: 350px;
 }
 .navbar .links ul li {
   list-style-type: none;
+  padding: 3px;
+  /* background: #000; */
 }
 .navbar .links ul li a {
   text-decoration: none;
   color: #444;
-  transition: 0.3s;
+  display: inline-block; /* Ensure transform works on inline elements */
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for scale and color */
 }
 .navbar .links ul li a:hover {
-  color: #dfdf07;
-  transition: 0.3s;
+  color: #1034eb;
+  transform: scale(1.09); /* Scale out effect */
 }
 .navbar .links ul:last-child {
   gap: 10px;
@@ -154,7 +272,7 @@ input::-webkit-outer-spin-button {
     padding-top: 20px;
   }
   .show_navbar {
-    height: 200px;
+    height: 200px;  
     transition: 0.3s;
   }
 }
@@ -345,11 +463,20 @@ footer div ul a span {
   max-width: 1700px;
   margin: 0 auto;
   gap: 50px;
+  background-image: url('https://wallpapercave.com/wp/wp2561061.jpg'); /* Image background */
+  background-size: cover; /* Ensure the image covers the entire section */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent image repetition */
+  color: white; /* Make sure the text stands out against the background */
+  /* padding: 20px; */
+  transition: background-color 0.3s ease-in-out; /* Optional: smooth transition */
 }
+
 .hero h1 {
   font-size: 3rem;
   text-transform: uppercase;
   font-weight: 700;
+  color: #111;
 }
 .hero h4 {
   font-size: 1.5rem;
@@ -359,7 +486,7 @@ footer div ul a span {
 .hero .box {
   max-width: 900px;
   text-align: center;
-  background: #dfdf07;
+  background: #dfb707;
   color: #111;
   padding: 50px 75px;
   border-radius: 35px;
@@ -399,17 +526,24 @@ footer div ul a span {
   max-width: 1700px;
   margin: 0 auto;
   gap: 50px;
+  background-image: url('https://i.pinimg.com/736x/29/ab/fd/29abfd53e222f55aa9ccfd1a6e3f9256.jpg'); /* Add the background image */
+  background-size: cover; /* Ensure the image covers the entire section */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  color: #111; /* Ensure the text stands out against the background */
 }
 .services h3 {
   font-size: 1.75rem;
   font-weight: 600;
-  color: #dfdf07;
+  color: #161516;
   text-transform: uppercase;
 }
 .services .grid {
   display: grid;
+  /* background: #b3a8a8; */
+  padding: 15px;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  grid-gap: 50px;
+  grid-gap: 40px;
 }
 .services .grid .card {
   background: black;
@@ -420,11 +554,13 @@ footer div ul a span {
   padding: 32px 20px;
   border-radius: 6px;
   transition: 0.3s;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 .services .grid .card:hover {
-  background: #dfdf07;
+  background: #dfb707;
   color: #111;
   transition: 0.3s;
+  transform: scale(1.05);
 }
 .services .grid .card h4 {
   font-weight: 600;
@@ -437,6 +573,11 @@ footer div ul a span {
   }
 }
 
+.card-link {
+  text-decoration: none; /* Removes underline from the link */
+  color: inherit; /* Ensures the text color stays the same */
+}
+
 .howItWorks {
   padding: 50px 110px;
   display: flex;
@@ -445,7 +586,8 @@ footer div ul a span {
   align-items: center;
   margin: 0 auto;
   gap: 50px;
-  background: #dfdf07;
+  /* background: #dfdf07; */
+  background: #eddbbc;
 }
 .howItWorks h3 {
   font-size: 1.75rem;
@@ -591,7 +733,7 @@ footer div ul a span {
   padding: 8px;
   color: #fff;
 }
-.authPage .container form button {
+/* .authPage .container form button {
   padding: 12px;
   text-align: center;
   border: none;
@@ -601,7 +743,7 @@ footer div ul a span {
   background: #dfdf07;
   font-size: 1.2rem;
   border-radius: 7px;
-}
+} */
 .authPage .container form a {
   padding: 12px;
   text-align: center;
@@ -625,6 +767,45 @@ footer div ul a span {
   width: 550px;
   height: 550px;
 }
+
+button {
+  /* width: 100%; */
+  padding: 0.8rem;
+  font-size: 1rem;
+  background: #f7e529;
+  color: #0e0d0d;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  font-weight: bolder
+}
+
+button:hover {
+  background: #ff5733;
+  transform: scale(1.02);
+}
+
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.authPage .container form .register-link {
+  display: block;
+  text-align: center;
+  margin-top: 1rem;
+  color: #080808;
+  text-decoration: none;
+  transition: color 0.3s;
+  background: #f7e529;
+}
+
+.authPage .container form .register-link:hover {
+  background: #ff5733;
+}
+
+
 @media (max-width: 1520px) {
   .authPage {
     min-width: 100%;
